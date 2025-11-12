@@ -1,12 +1,16 @@
 {
   "workflow_id": "issue-1",
   "issue_number": 1,
-  "phase": "review",
-  "status": "in-progress",
-  "next_action": "code_review",
+  "phase": "complete",
+  "status": "success",
+  "next_action": "ready_for_merge",
   "timestamp": "2025-11-12T00:00:00Z",
   "plan_file": "specs/plan-1.md",
   "build_status": "SUCCESS",
+  "test_status": "PASSED",
+  "commit_hash": "c30eaa7",
+  "files_created": 9,
+  "files_modified": 2,
   "retry_count": 0,
   "max_retries": 2
 }
