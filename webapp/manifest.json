@@ -5,8 +5,8 @@
 		"id": "ui5.typescript.helloworld",
 		"type": "application",
 		"i18n": "i18n/i18n.properties",
-		"title": "UI5 TypeScript Hello World",
-		"description": "UI5 TypeScript Hello World",
+		"title": "UI5Agency",
+		"description": "KI-Agenten Entwicklungsplattform",
 		"applicationVersion": {
 			"version": "1.0.0"
 		},

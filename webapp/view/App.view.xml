@@ -6,18 +6,18 @@
 
 	<App id="app">
 		<Page
-			title="Hello World"
+			title="UI5Agency"
 			id="page">
 			<content>
 				<IllustratedMessage
-					title="Hello World"
+					title="Willkommen bei UI5Agency"
 					illustrationType="sapIllus-SuccessHighFive"
 					enableVerticalResponsiveness="true"
-					description="This is a UI5 TypeScript Hello World app">
+					description="Code wird Realität">
 					<additionalContent>
 						<Button
 							id="helloButton"
-							text="Say Hello"
+							text="Mission starten"
 							press="sayHello" />
 					</additionalContent>
 				</IllustratedMessage>
