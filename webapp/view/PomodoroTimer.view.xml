@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mvc:View
+	controllerName="ui5/typescript/helloworld/controller/PomodoroTimer"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:m="sap.m"
+	xmlns:l="sap.ui.layout"
+	displayBlock="true">
+	<m:Page
+		title="Pomodoro Timer"
+		showHeader="true"
+		enableScrolling="true">
+		<m:VBox
+			alignItems="Center"
+			justifyContent="Center"
+			class="pomodoroContainer"
+			height="100%">
+			<!-- Header -->
+			<m:Text
+				text="Pomodoro Timer"
+				class="pomodoroHeader"
+				textAlign="Center" />
+
+			<!-- Timer Display -->
+			<m:Text
+				text="{timer>/timeDisplay}"
+				class="pomodoroDisplay"
+				textAlign="Center" />
+
+			<!-- Button Container -->
+			<m:HBox
+				alignItems="Center"
+				justifyContent="Center"
+				class="pomodoroButtonContainer">
+				<!-- Start/Pause Button -->
+				<m:Button
+					id="startPauseBtn"
+					text="{timer>/buttonLabel}"
+					press=".onStartPause"
+					type="Emphasized"
+					class="pomodoroButton" />
+
+				<!-- Reset Button -->
+				<m:Button
+					id="resetBtn"
+					text="Reset"
+					press=".onReset"
+					type="Default"
+					class="pomodoroButton" />
+			</m:HBox>
+
+			<!-- Session Counter -->
+			<m:Text
+				text="Sessions completed: {timer>/sessionCount}"
+				class="pomodoroCounter"
+				textAlign="Center" />
+		</m:VBox>
+	</m:Page>
+</mvc:View>

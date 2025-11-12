@@ -1,0 +1,12 @@
+{
+  "workflow_id": "issue-1",
+  "issue_number": 1,
+  "phase": "review",
+  "status": "in-progress",
+  "next_action": "code_review",
+  "timestamp": "2025-11-12T00:00:00Z",
+  "plan_file": "specs/plan-1.md",
+  "build_status": "SUCCESS",
+  "retry_count": 0,
+  "max_retries": 2
+}

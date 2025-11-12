@@ -58,7 +58,45 @@
 		},
 
 		"routing": {
-			
+			"config": {
+				"routerClass": "sap.ui.core.routing.Router",
+				"controlId": "app",
+				"controlAggregation": "pages",
+				"async": true,
+				"bypassed": {
+					"target": "notFound"
+				}
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name": "home",
+					"target": "home"
+				},
+				{
+					"pattern": "pomodoro",
+					"name": "pomodoroTimer",
+					"target": "pomodoroTimer"
+				}
+			],
+			"targets": {
+				"home": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewName": "ui5.typescript.helloworld.view.App"
+				},
+				"pomodoroTimer": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewName": "ui5.typescript.helloworld.view.PomodoroTimer"
+				},
+				"notFound": {
+					"viewType": "XML",
+					"viewName": "ui5.typescript.helloworld.view.NotFound"
+				}
+			}
 		}
 	}
 }

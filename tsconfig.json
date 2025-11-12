@@ -7,14 +7,14 @@
     "allowJs": true,
     "strict": true,
     "strictPropertyInitialization": false,
-    "rootDir": "./webapp",
+    "rootDir": "./",
     "baseUrl": "./",
     "paths": {
       "ui5/typescript/helloworld/*": ["./webapp/*"],
-      "unit/*": ["./webapp/test/unit/*"],
-      "integration/*": ["./webapp/test/integration/*"]
+      "unit/*": ["./test/unit/*"],
+      "integration/*": ["./test/integration/*"]
     },
     "composite": true
   },
-  "include": ["./webapp/**/*"]
+  "include": ["./webapp/**/*", "./test/**/*"]
 }
