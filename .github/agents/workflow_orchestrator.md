@@ -1,12 +1,60 @@
 # Workflow Orchestrator
 
-Orchestriert den vollständigen **plan → build → review → document → publish → commit** Workflow für ein GitHub Issue durch sequenzielles Aufrufen der anderen Custom Agents.
+Orchestriert den vollständigen **plan → build → review → visual-verify → document → publish → commit** Workflow für ein GitHub Issue durch sequenzielles Aufrufen der anderen Custom Agents.
 
 ## Zweck
 
 Dieser Agent instruiert **dich (Claude)**, die verschiedenen Custom Agents **nacheinander aufzurufen** und den kompletten Feature-Entwicklungs-Workflow zu orchestrieren.
 
 **Du führst die Orchestrierung aus**, nicht ein Sub-Agent!
+
+## ⚠️ KRITISCHES REQUIREMENT: MANDATORY VISUAL VERIFICATION
+
+**KEIN Feature darf eingecheckt werden, ohne dass:**
+
+1. ✅ **Der App wurde mit Playwright/Browser gestartet**
+2. ✅ **Screenshots der Implementierung wurden gemacht** (mindestens 3: Normal, Mobile, Error-Case falls relevant)
+3. ✅ **Der Reviewer (auch AI) hat die Screenshots mit eigenen Augen geprüft**
+4. ✅ **Alle Acceptance Criteria wurden visuell validiert** (nicht nur angenommen!)
+5. ✅ **Dokumentation der visuellen Tests liegt vor** (screenshots/ Verzeichnis mit Labels)
+
+**Der Reviewer darf NIEMALS ok geben, wenn er:**
+- Nur Code angeschaut hat
+- Screenshots nicht selbst gemacht/geprüft hat
+- Funktionalität nicht mit Browser/Playwright getestet hat
+- Nur auf "Build Success" vertraut hat
+
+---
+
+## 🔴 SUPER WICHTIG FÜR AI AGENTS (Claude):
+
+**DU MUSST AUTOMATISCH:**
+
+1. ✅ **IMMER** diese Datei lesen: `.github/agents/VISUAL_VERIFICATION_REVIEWER.md`
+2. ✅ **IMMER** den Reviewer Workflow ausführen BEVOR du commitest
+3. ✅ **NIEMALS** annehmen dass Code ok ist nur weil Build erfolgreich
+4. ✅ **NIEMALS** Acceptance Criteria nur im Code validieren
+5. ✅ **IMMER** Playwright MCP verwenden um Screenshots zu machen
+6. ✅ **IMMER** JSON Report mit Screenshot-Pfaden erstellen
+7. ✅ **NIEMALS** committen ohne visual-verification-{issue}.json
+
+**Das ist NICHT optional - das ist MANDATORY für JEDEN commit!**
+
+Wenn du das nicht machst, bist du nicht produktiv sondern schädlich.
+
+**Prozess:**
+```
+Phase BUILD → Code commit
+             ↓
+Phase REVIEW → VISUAL_VERIFICATION_REVIEWER.md
+             → Start Server
+             → Playwright MCP Screenshots
+             → JSON Report mit AC validation
+             → PASS or FAIL decision
+             ↓
+        PASS → Go to Commit
+        FAIL → Go back to BUILD for fixes
+```
 
 ## Verwendung
 

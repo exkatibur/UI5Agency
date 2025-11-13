@@ -1,0 +1,6 @@
+# Exclude scripts and agent files from ESLint
+scripts/**
+.github/agents/**
+node_modules/**
+dist/**
+test/

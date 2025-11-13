@@ -16,5 +16,6 @@
     },
     "composite": true
   },
-  "include": ["./webapp/**/*", "./test/**/*"]
+  "include": ["./webapp/**/*", "./test/**/*", "./scripts/**/*", "./.github/agents/**/*"],
+  "exclude": ["./test/**/*.qunit.ts", "./test/integration/**/*.ts"]
 }

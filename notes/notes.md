@@ -11,3 +11,12 @@ cli:
     /delegate Finish fixing the issue outlined in #1 and use the playwright MCP server to ensure that it is fixed/implemented
 
 
+outlook:
+ build with web parallel over night
+    claude code
+    github
+ worktrees
+ claude code im Alltag
+ individualisierte Software für jeden
+    Github - Shopping ;-)
+
